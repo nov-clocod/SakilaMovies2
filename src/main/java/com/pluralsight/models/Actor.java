@@ -25,6 +25,6 @@ public class Actor {
 
     @Override
     public String toString() {
-        return String.format("%-4d %-45s %-45s\n", actorId, firstName, lastName);
+        return String.format("%-8d %-45s %-45s\n", actorId, firstName, lastName);
     }
 }

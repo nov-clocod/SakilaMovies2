@@ -34,14 +34,24 @@ public class Main {
             String userInputMovieActorLastName = myScanner.nextLine().trim();
 
             List<Actor> actorList = dataManager.getActorsByName(userInputMovieActorFirstName, userInputMovieActorLastName);
-            actorList.forEach(System.out::println);
+            if (!actorList.isEmpty()) {
+                System.out.println("\nActor ID " + "First Name" + " ".repeat(36) + "Last Name" + " ".repeat(37));
+                System.out.println("-------- " + "-".repeat(45) + " " + "-".repeat(45));
+                actorList.forEach(System.out::println);
+            } else {
+                System.out.println();
+            }
 
             System.out.println("Enter the actor's id to display films the actor has played a role in:");
             int userInputActorID = myScanner.nextInt();
             myScanner.nextLine();
 
             List<Film> filmList = dataManager.getFilmByActorID(userInputActorID);
-            filmList.forEach(System.out::println);
+            if (!filmList.isEmpty()) {
+                System.out.println("\nFilm ID " + "Title" + " ".repeat(26) + "Description" + " ".repeat(110) + "Release Year" + " " + "Movie Length");
+                System.out.println("------- " + "-".repeat(30) + " " + "-".repeat(120) + " " + "-".repeat(12) + " " + "-".repeat(12));
+                filmList.forEach(System.out::println);
+            }
         } catch (Exception ex) {
             System.out.println("Please check your inputs!");
             System.out.println(ex.getMessage());

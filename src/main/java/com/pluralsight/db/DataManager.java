@@ -43,7 +43,7 @@ public class DataManager {
                             matchingActors.add(new Actor(actorID, actorFirstName, actorLastName));
                         } while (results.next());
                     } else {
-                        System.out.println("Sorry, there are no matching actors");
+                        System.out.println("\nSorry, there are no matching actors");
                     }
                 }
             }
@@ -81,7 +81,7 @@ public class DataManager {
                             matchingFilms.add(new Film(filmID, filmTitle, filmDescription, filmYear, filmLength));
                         } while (results.next());
                     } else {
-                        System.out.println("Sorry, there are no films for that actor");
+                        System.out.println("\nSorry, there are no films for that actor");
                     }
                 }
             }
